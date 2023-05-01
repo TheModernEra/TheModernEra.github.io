@@ -36,7 +36,24 @@ body, html {
 }
 
 #logo {
-    max-width: 100%;
-    min-width: 40%;
+    width: 100%;
     height: auto;
+}
+
+#logo_inner {
+    width: 30vw;
+}
+
+/* Screens smaller than or equal to 991px */
+@media screen and (max-width:991px) {
+    #logo_inner {
+        width: 50vw;
+    }
+}
+
+/* Screens smaller than or equal to 768px */
+@media screen and (max-width:768px) {
+    #logo_inner {
+        width: 100vw;
+    }
 }

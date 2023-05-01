@@ -1,3 +1,8 @@
+body {
+    background-image: url("wallpaper.png");
+    background-color: #cccccc;
+}
+
 .outer {
     display: table;
     position: absolute;

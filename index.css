@@ -1,6 +1,17 @@
-body {
+body, html {
+    background-color: #131315;
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg {
     background-image: url("wallpaper.png");
-    background-color: #cccccc;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .outer {
@@ -24,11 +35,8 @@ body {
     /* Whatever width you want */
 }
 
-.bgr-img {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    background-image: url("wallpaper.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+#logo {
+    max-width: 100%;
+    min-width: 40%;
+    height: auto;
 }

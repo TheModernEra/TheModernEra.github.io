@@ -1,52 +1,41 @@
 counter = 0
-function switchImage(element) {
+function switchImage() {
     if (counter == 0) {
-        fadeInLogo()
-        setTimeout(() => { fadeOutSwitch() }, 500);
-        setTimeout(() => { fadeInBG() }, 1500);
+        document.getElementById("switch").src = "pics/on_switch.png";
+        fadeInElement(document.getElementById("logo"))
+        counter = 1;
+
+        setTimeout(() => { fadeOutElement(document.getElementById("switch")) }, 500);
+        setTimeout(() => { fadeInElement(document.getElementById("bg")) }, 1500);
+        setTimeout(() => { fadeInElement(document.getElementById("switch")) }, 2500);
+        setTimeout(() => { document.getElementById("switch").src = "pics/arrow.png" }, 2500);
+
+        document.getElementById("everything_else_div").style.display = "flex";
     }
 }
 
-function fadeInLogo() {
-    document.getElementById("switch").src = "on_switch.png";
-    var logo = document.getElementById("logo");
+function fadeInElement(element) {
     var opacity = 0;
     var intervalID = setInterval(function() {
         if (opacity < 1) {
             opacity = opacity + 0.1
-            logo.style.opacity = opacity;
+            element.style.opacity = opacity;
         } else {
             clearInterval(intervalID);
         }
     }, 15);
 }
 
-function fadeOutSwitch() {
-    var light_switch = document.getElementById("switch");
+function fadeOutElement(element) {
     var opacity = 1;
     var interval = setInterval(function() {
         if (opacity > 0) {
             opacity = opacity - 0.1
-            light_switch.style.opacity = opacity;
+            element.style.opacity = opacity;
         } else {
             clearInterval(interval);
         }
     }, 30);
-    counter = 1;
-}
-
-function fadeInBG() {
-    var bg = document.getElementById("bg");
-    var opacity = 0;
-    var intervalID = setInterval(function() {
-        if (opacity < 1) {
-            opacity = opacity + 0.1
-            logo.style.opacity = opacity;
-            bg.style.opacity = opacity;
-        } else {
-            clearInterval(intervalID);
-        }
-    }, 15);
 }
 
 function sleep(milliseconds) {
